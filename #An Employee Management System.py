@@ -1,10 +1,11 @@
 #An Employee Management System
 class Employee:
-    def __init__(self, name:str, age: int, position: str, salary: float):
+    def __init__(self, name:str, age: int, position: str, salary: float, ID_number):
         self.name = name
         self.age = age
         self.position = position
         self.salary = salary
+        self.ID_number = ID_number
 
     def __str__(self):
         return f"Employee Name: {self.name}\nAge: {self.age}\nPosition: {self.position}\nSalary: {self.salary}"
@@ -43,6 +44,12 @@ class Company:
                 return emp
         return None
     
+    def find_employee_by_ID(self, ID_number):
+        for emp in self.employees:
+            if emp.ID_number == ID_number
+                return emp
+        return None
+
     def main():
         company = Company()
 
