@@ -40,65 +40,64 @@ class Company:
 
     def find_employee(self, name: str):
         for emp in self.employees:
-            if emp.name == name
+            if emp.name == name:
                 return emp
         return None
     
     def find_employee_by_ID(self, ID_number):
         for emp in self.employees:
-            if emp.ID_number == ID_number
+            if emp.ID_number == ID_number:
                 return emp
         return None
 
-    def main():
-        company = Company()
+    def display():
+    company = Company()
 
-        while True:
-            print("Employee Management System")
-            print("1. Add new employee")
-            print("2. Remove an employee")
-            print("3. Update employee's details")
-            print("4. View all employees")
-            print("5. Find an employee by name")
+    while True:
+        print("Employee Management System")
+        print("1. Add new employee")
+        print("2. Remove an employee")
+        print("3. Update employee's details")
+        print("4. View all employees")
+        print("5. Find an employee by name")
             
-            choice = input("select")
+        choice = input("select")
 
-            if choice == "1":
-                name = input("Enter Employee name")
-                age = input(int("Enter Employee age"))
-                position = input("Enter employee position")
-                salary = input(float("Enter employee salary"))
-                new_employee = Employee(name, age, position, salary)
-                company.add_employee(new_employee)
-                print("Employee has been added successfully")
+        if choice == "1":
+            name = input("Enter Employee name")
+            age = input(int("Enter Employee age"))
+            position = input("Enter employee position")
+            salary = input(float("Enter employee salary"))
+            new_employee = Employee(name, age, position, salary)
+            company.add_employee(new_employee)
+            print("Employee has been added successfully")
 
-            elif choice == "2":
-                name = input("Enter employee name to be removed")
-                company.remove_employee(name)
-                print("Employee has been removed successfully")
+        elif choice == "2":
+            name = input("Enter employee name to be removed")
+            company.remove_employee(name)
+            print("Employee has been removed successfully")
 
-            elif choice == "3":
-                name = input("Enter employee name to be updated")
-                new_position = input("Enter the new position")
-                increased_salary = input(float("Enter current employee salary"))
-                new_salary = float(increased_salary)
-                company.update_employee(name, new_position, new_salary)
-                print("Employee details has been updated successfully")
+        elif choice == "3":
+            name = input("Enter employee name to be updated")
+            new_position = input("Enter the new position")
+            increased_salary = input(float("Enter current employee salary"))
+            new_salary = float(increased_salary)
+            company.update_employee(name, new_position, new_salary)
+            print("Employee details has been updated successfully")
             
-            elif choice == "4":
-                print("Employee List")
-                company.view_all_employees()
+        elif choice == "4":
+            print("Employee List")
+            company.view_all_employees()
             
-            elif choice == "5":
-                name = input("Enter Employee name")
-                employee = company.find_employee(name)
-                if employee:
-                    print(employee)
-                else:
-                    print("Invalid")
-
+        elif choice == "5":
+            name = input("Enter Employee name")
+            employee = company.find_employee(name)
+            if employee:
+                print(employee)
             else:
-                print("Invalid choice")
+                print("Invalid")
 
-if __name__ == "__main__":
-    main()
+        else:
+            print("Invalid choice")
+
+display()
